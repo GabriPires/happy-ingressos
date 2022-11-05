@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home {PAGE_HEADER_SUFFIX}</title>
+        <title>{`Home ${PAGE_HEADER_SUFFIX}`}</title>
       </Head>
 
       <Header />

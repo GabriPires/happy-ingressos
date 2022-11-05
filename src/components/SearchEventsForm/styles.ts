@@ -40,6 +40,14 @@ export const SearchFormContainer = styled('form', {
       borderRadius: '4px',
       width: '40px',
       height: '40px',
+      cursor: 'pointer',
+
+      transition: 'all 0.2s',
+
+      '&:hover': {
+        background: '$white',
+        color: '$primary',
+      },
     },
   },
 });

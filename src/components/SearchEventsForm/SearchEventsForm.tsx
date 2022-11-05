@@ -26,7 +26,7 @@ export const SearchEventsForm = ({ onSubmit }: SearchEventsFormProps) => {
       <h2>Qual a boa hoje?</h2>
       <div>
         <input placeholder="Encontre um evento" {...register('search')} />
-        <button type="submit">
+        <button type="submit" title="Buscar por eventos">
           <MagnifyingGlass size={24} />
         </button>
       </div>

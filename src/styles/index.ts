@@ -21,6 +21,14 @@ export const {
 
       green300: '#00b37e',
       green500: '#00875f',
+
+      red300: '#ff4d4f',
+
+      blue500: '#1E6DC7',
+
+      purple700: '#402BAB',
+
+      primary: '#8E31AA',
     },
     fontSizes: {
       md: '1.125rem',

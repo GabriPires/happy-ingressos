@@ -8,6 +8,14 @@ export const SearchFormContainer = styled('form', {
   background: '$primary',
   padding: '1.75rem 0.8rem',
 
+  '@lg': {
+    width: '90%',
+    margin: '0 auto',
+    padding: '2rem',
+    borderBottomRightRadius: '0.5rem',
+    borderBottomLeftRadius: '0.5rem',
+  },
+
   h2: {
     fontSize: '$lg',
     marginBottom: '0.5rem',

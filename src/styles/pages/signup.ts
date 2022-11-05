@@ -64,12 +64,6 @@ export const FormContainer = styled('form', {
     textDecoration: 'none',
     marginTop: '16px',
   },
-
-  span: {
-    fontSize: '$md',
-    color: '$gray100',
-    marginTop: '16px',
-  },
 });
 
 export const DesktopContent = styled('div', {

@@ -6,7 +6,7 @@ export const FormContent = styled('div', {
   flexDirection: 'column',
   gap: '0.25rem',
 
-  '&:first-of-type': {
+  '&:not(:last-of-type)': {
     marginBottom: '8px',
   },
 });

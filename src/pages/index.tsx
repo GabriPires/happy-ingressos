@@ -1,10 +1,22 @@
 import { Header } from '../components/Header/Header';
-import { Container } from '../styles/pages/home';
+import { Container, Content } from '../styles/pages/home';
+import Head from 'next/head';
+import { PAGE_HEADER_SUFFIX } from '../constants/title';
 
 export default function Home() {
   return (
-    <Container>
+    <>
+      <Head>
+        <title>Home {PAGE_HEADER_SUFFIX}</title>
+      </Head>
+
       <Header />
-    </Container>
+
+      <Container>
+        <Content>
+          <p>opa</p>
+        </Content>
+      </Container>
+    </>
   );
 }

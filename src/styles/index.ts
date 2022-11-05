@@ -1,4 +1,4 @@
-import { createStitches } from '@stitches/react';
+import { createStitches, defaultThemeMap } from '@stitches/react';
 
 export const {
   config,
@@ -31,10 +31,18 @@ export const {
       primary: '#8E31AA',
     },
     fontSizes: {
-      md: '1.125rem',
+      sm: '0.875rem',
+      md: '1rem',
       lg: '1.25rem',
       xl: '1.5rem',
       '2xl': '2rem',
     },
+    fontWeights: {
+      medium: '500',
+      semibold: '600',
+    },
+  },
+  themeMap: {
+    ...defaultThemeMap,
   },
 });

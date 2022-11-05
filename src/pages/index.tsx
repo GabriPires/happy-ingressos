@@ -2,8 +2,16 @@ import { Header } from '../components/Header/Header';
 import { Container, Content } from '../styles/pages/home';
 import Head from 'next/head';
 import { PAGE_HEADER_SUFFIX } from '../constants/title';
+import {
+  SearchEventsForm,
+  SearchEventsFormData,
+} from '../components/SearchEventsForm/SearchEventsForm';
 
 export default function Home() {
+  const handleSearchEvents = (data: SearchEventsFormData) => {
+    console.log(data);
+  };
+
   return (
     <>
       <Head>
@@ -14,7 +22,7 @@ export default function Home() {
 
       <Container>
         <Content>
-          <p>opa</p>
+          <SearchEventsForm onSubmit={handleSearchEvents} />
         </Content>
       </Container>
     </>

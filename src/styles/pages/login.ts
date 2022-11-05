@@ -4,11 +4,15 @@ export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  justifyContent: 'center',
   height: '100vh',
 
   '@lg': {
     maxWidth: 1180,
     margin: '0 auto',
+
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
   },
 });
 
@@ -19,6 +23,13 @@ export const FormContainer = styled('form', {
   justifyContent: 'center',
 
   height: '100%',
+  width: '100%',
+
+  paddingInline: '32px',
+
+  '@lg': {
+    width: '450px',
+  },
 
   h1: {
     fontSize: '$xl',
@@ -38,6 +49,13 @@ export const FormContainer = styled('form', {
     borderRadius: '4px',
     fontSize: '$md',
     fontWeight: '$medium',
+    cursor: 'pointer',
+
+    transition: 'all 0.2s',
+
+    '&:hover': {
+      filter: 'brightness(0.9)',
+    },
   },
 
   a: {
@@ -52,4 +70,13 @@ export const FormContainer = styled('form', {
     color: '$gray100',
     marginTop: '16px',
   },
+});
+
+export const DesktopContent = styled('div', {
+  gridColumn: 2,
+
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
 });

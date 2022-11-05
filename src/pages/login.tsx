@@ -1,7 +1,11 @@
 import Head from 'next/head';
 import { TextInput } from '../components/TextInput/TextInput';
 import { PAGE_HEADER_SUFFIX } from '../constants/title';
-import { Container, FormContainer } from '../styles/pages/login';
+import {
+  Container,
+  DesktopContent,
+  FormContainer,
+} from '../styles/pages/login';
 import * as zod from 'zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -75,6 +79,14 @@ export default function Login() {
             Não tem uma conta? <Link href={SIGNUP_ROUTE}>Cadastre-se</Link>
           </span>
         </FormContainer>
+
+        <DesktopContent>
+          <h1>
+            happy ingressos
+            <br />
+            :D
+          </h1>
+        </DesktopContent>
       </Container>
     </>
   );

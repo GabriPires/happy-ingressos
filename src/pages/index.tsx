@@ -6,6 +6,7 @@ import {
   SearchEventsForm,
   SearchEventsFormData,
 } from '../components/SearchEventsForm/SearchEventsForm';
+import { EventCard } from '../components/EventCard/EventCard';
 
 export default function Home() {
   const handleSearchEvents = (data: SearchEventsFormData) => {
@@ -23,6 +24,7 @@ export default function Home() {
       <Container>
         <Content>
           <SearchEventsForm onSubmit={handleSearchEvents} />
+          <EventCard />
         </Content>
       </Container>
     </>

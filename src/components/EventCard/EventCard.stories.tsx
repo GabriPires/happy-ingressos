@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { EventCard } from './EventCard';
+import { EventCard, EventCardProps } from './EventCard';
 
 const meta: Meta = {
   title: 'Components/EventCard',
@@ -8,8 +8,10 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story = () => {
-  return <EventCard />;
+const Template: Story<EventCardProps> = (args) => {
+  return <EventCard {...args} />;
 };
 
-export const Default = Template.bind({});
+export const Default = Template.bind({
+  variant: 'small',
+});

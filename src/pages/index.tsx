@@ -24,7 +24,6 @@ export default function Home() {
       <Container>
         <Content>
           <SearchEventsForm onSubmit={handleSearchEvents} />
-          <EventCard />
         </Content>
       </Container>
     </>

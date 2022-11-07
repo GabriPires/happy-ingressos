@@ -77,17 +77,17 @@ export default function Home() {
             <div className="keen-slider" ref={trendingSliderRef}>
               <EventCard
                 variant="large"
-                href={'/'}
+                href={'/events/show'}
                 className={'keen-slider__slide'}
               />
               <EventCard
                 variant="large"
-                href={'/'}
+                href={'/events/show'}
                 className={'keen-slider__slide'}
               />
               <EventCard
                 variant="large"
-                href={'/'}
+                href={'/events/show'}
                 className={'keen-slider__slide'}
               />
             </div>
@@ -96,9 +96,9 @@ export default function Home() {
           <Sector>
             <CustomHeading>Pra curtir com os amigos</CustomHeading>
             <EventsContainer>
-              <EventCard variant="small" href={'/'} />
-              <EventCard variant="small" href={'/'} />
-              <EventCard variant="small" href={'/'} />
+              <EventCard variant="small" href={'/events/show'} />
+              <EventCard variant="small" href={'/events/show'} />
+              <EventCard variant="small" href={'/events/show'} />
             </EventsContainer>
           </Sector>
         </Content>

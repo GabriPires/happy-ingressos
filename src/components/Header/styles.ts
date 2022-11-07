@@ -7,6 +7,11 @@ export const HeaderContainer = styled('header', {
 
   padding: '1.75rem 0.8rem',
 
+  a: {
+    textDecoration: 'none',
+    color: '$gray300',
+  },
+
   '@lg': {
     padding: '2rem 0',
   },

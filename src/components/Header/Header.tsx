@@ -1,4 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
+import Link from 'next/link';
 import { List } from 'phosphor-react';
 import {
   LOGIN_ROUTE,
@@ -20,7 +21,9 @@ export const Header = () => {
     <>
       <HeaderContainer>
         <HeaderContent>
-          <h1>happy ingressos :D</h1>
+          <Link href={'/'} title={'Voltar para página inicial'} passHref>
+            <h1>happy ingressos :D</h1>
+          </Link>
 
           <DesktopLinkContainer>
             <HeaderLink href={LOGIN_ROUTE}>Entrar</HeaderLink>

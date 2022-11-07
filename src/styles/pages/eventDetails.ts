@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { styled } from '..';
 
 export const Container = styled('div', {
@@ -63,7 +64,7 @@ export const EventDetails = styled('div', {
     },
 
     button: {
-      display: 'block',
+      display: 'flex',
     },
   },
 });
@@ -100,7 +101,13 @@ export const MobileBuyContainer = styled('div', {
   },
 });
 
-export const BuyButton = styled('button', {
+export const BuyButton = styled(Link, {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  textDecoration: 'none',
+
   background: '$primary',
   border: 'none',
 

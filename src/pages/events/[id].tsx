@@ -45,7 +45,7 @@ export default function EventPage() {
               <Clock size={22} /> 23:00
             </span>
 
-            <BuyButton>Comprar ingressos</BuyButton>
+            <BuyButton href={'/checkout/show'}>Comprar ingressos</BuyButton>
           </EventDetails>
         </EventHeader>
 
@@ -92,7 +92,7 @@ export default function EventPage() {
         </EventContent>
 
         <MobileBuyContainer>
-          <BuyButton>Comprar ingressos</BuyButton>
+          <BuyButton href={'/checkout/show'}>Comprar ingressos</BuyButton>
         </MobileBuyContainer>
       </Container>
     </>

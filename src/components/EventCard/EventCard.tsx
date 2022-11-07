@@ -1,14 +1,16 @@
 import Image from 'next/image';
+import { LinkProps } from 'next/link';
 import { Clock, MapPin } from 'phosphor-react';
 import { CardContent, EventDate, Container, EventDetails } from './styles';
 
-export interface EventCardProps {
+export interface EventCardProps extends LinkProps {
   variant?: 'small' | 'large';
+  className?: string;
 }
 
-export const EventCard = ({ variant = 'small' }: EventCardProps) => {
+export const EventCard = ({ variant = 'small', ...props }: EventCardProps) => {
   return (
-    <Container size={variant} href={'/'}>
+    <Container size={variant} {...props}>
       <Image
         src={'https://picsum.photos/380/210'}
         alt={'Miniatura do evento'}

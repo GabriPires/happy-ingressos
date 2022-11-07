@@ -7,15 +7,26 @@ import { Header } from '../../components/Header/Header';
 import { PAGE_HEADER_SUFFIX } from '../../constants/title';
 import {
   CheckoutContainer,
+  CheckoutSummary,
   Container,
   EventDetails,
   EventSummary,
+  FinishButton,
   TicketInput,
 } from '../../styles/pages/checkout';
 
 export default function CheckoutPage() {
   const [halfPriceTickets, setHalfPriceTickets] = useState(0);
   const [fullPriceTickets, setFullPriceTickets] = useState(0);
+
+  const ticketPrice = 5000; // R$ 50,00;
+  const ticketTax = 0.1; // 10% de taxa
+
+  const totalPrice =
+    (fullPriceTickets * ticketPrice) / 100 +
+    (ticketPrice / 100) * ticketTax * fullPriceTickets +
+    (halfPriceTickets * ticketPrice) / 2 / 100 +
+    (ticketPrice / 100) * ticketTax * (halfPriceTickets / 2);
 
   const increaseTickets = (type: 'half' | 'full') => {
     if (type === 'half') {
@@ -106,6 +117,49 @@ export default function CheckoutPage() {
 
         <CheckoutContainer>
           <CustomHeading>Resumo da compra</CustomHeading>
+          <CheckoutSummary>
+            <h3>Meia</h3>
+            <p>
+              {new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format((halfPriceTickets * (ticketPrice / 2)) / 100)}
+              {' + '}
+              {new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format(
+                (ticketPrice / 2 / 100) * ticketTax * halfPriceTickets,
+              )}{' '}
+            </p>
+            <h3>Inteira</h3>
+            <p>
+              {new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format((fullPriceTickets * ticketPrice) / 100)}
+              {' + '}
+              {new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format(
+                (ticketPrice / 100) * ticketTax * fullPriceTickets,
+              )}{' '}
+              taxa de serviço
+            </p>
+          </CheckoutSummary>
+
+          <CheckoutSummary>
+            <h3>Total</h3>
+            <strong>
+              {new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              }).format(totalPrice)}
+            </strong>
+          </CheckoutSummary>
+
+          <FinishButton>Finalizar compra</FinishButton>
         </CheckoutContainer>
       </Container>
     </>

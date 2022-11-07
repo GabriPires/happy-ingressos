@@ -83,6 +83,8 @@ export const CheckoutContainer = styled('div', {
   marginTop: 20,
   paddingInline: '8px',
 
+  paddingBottom: '1rem',
+
   '@lg': {
     paddingInline: 0,
   },
@@ -130,10 +132,69 @@ export const TicketInput = styled('div', {
       background: 'none',
       border: 'none',
       color: '$gray300',
+      cursor: 'pointer',
 
       '&:active': {
         color: '$white',
       },
     },
+  },
+});
+
+export const CheckoutSummary = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-end',
+  gap: '1rem',
+
+  background: '$gray800',
+  padding: '1rem',
+  borderRadius: '6px',
+
+  marginTop: 20,
+
+  h3: {
+    fontSize: '$md',
+  },
+
+  p: {
+    fontSize: '$sm',
+  },
+
+  strong: {
+    fontSize: '$lg',
+  },
+});
+
+export const FinishButton = styled('button', {
+  marginTop: 20,
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  textDecoration: 'none',
+
+  background: '$primary',
+  border: 'none',
+
+  color: '$white',
+  fontSize: '$lg',
+  fontWeight: 'bold',
+
+  padding: '1rem 2rem',
+  borderRadius: '4px',
+
+  cursor: 'pointer',
+
+  transition: 'all 0.2s',
+
+  '&:hover': {
+    filter: 'brightness(0.9)',
+  },
+
+  '@lg': {
+    width: 'fit-content',
+    alignSelf: 'flex-end',
   },
 });

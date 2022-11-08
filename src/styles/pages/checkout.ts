@@ -141,6 +141,22 @@ export const TicketInput = styled('div', {
   },
 });
 
+export const TicketLabel = styled('span', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.25rem',
+
+  h3: {
+    fontSize: '$md',
+    color: '$white',
+  },
+
+  p: {
+    fontSize: '$sm',
+    color: '$gray300',
+  },
+});
+
 export const CheckoutSummary = styled('div', {
   display: 'flex',
   flexDirection: 'column',

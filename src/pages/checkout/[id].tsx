@@ -13,6 +13,7 @@ import {
   EventSummary,
   FinishButton,
   TicketInput,
+  TicketLabel,
 } from '../../styles/pages/checkout';
 
 export default function CheckoutPage() {
@@ -90,7 +91,10 @@ export default function CheckoutPage() {
         <CheckoutContainer>
           <CustomHeading>Ingressos</CustomHeading>
           <TicketInput>
-            <p>Meia</p>
+            <TicketLabel>
+              <h3>Meia</h3>
+              <p>1º Lote</p>
+            </TicketLabel>
             <div>
               <button onClick={() => decreaseTickets('half')}>
                 <Minus size={16} />
@@ -102,7 +106,10 @@ export default function CheckoutPage() {
             </div>
           </TicketInput>
           <TicketInput>
-            <p>Inteira</p>
+            <TicketLabel>
+              <h3>Inteira</h3>
+              <p>1º Lote</p>
+            </TicketLabel>
             <div>
               <button onClick={() => decreaseTickets('full')}>
                 <Minus size={16} />
@@ -119,6 +126,7 @@ export default function CheckoutPage() {
           <CustomHeading>Resumo da compra</CustomHeading>
           <CheckoutSummary>
             <h3>Meia</h3>
+
             <p>
               {new Intl.NumberFormat('pt-BR', {
                 style: 'currency',

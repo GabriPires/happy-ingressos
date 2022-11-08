@@ -1,11 +1,13 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { SignOut, X } from 'phosphor-react';
+import Link from 'next/link';
+import { SignOut, User, X } from 'phosphor-react';
 import {
   LOGIN_ROUTE,
   SIGNUP_ROUTE,
   PROMOTER_SIGNUP_ROUTE,
   MY_TICKETS_ROUTE,
   EVENTS_ROUTE,
+  PROFILE_ROUTE,
 } from '../../constants/routes';
 import { useAuth } from '../../contexts/AuthContext';
 import { LinkButton } from '../LinkButton/LinkButton';
@@ -13,7 +15,7 @@ import {
   CloseButton,
   Content,
   ModalLink,
-  ModalLogoutButton,
+  ModalButtonWithIcon,
   Overlay,
 } from './styles';
 
@@ -41,10 +43,22 @@ export const HeaderModal = () => {
         <span>
           <LinkButton href={PROMOTER_SIGNUP_ROUTE}>Crie seu evento</LinkButton>
           {isAuthenticated && (
-            <ModalLogoutButton onClick={handleLogout}>
-              <SignOut size={24} />
-              Desconectar
-            </ModalLogoutButton>
+            <>
+              <Link
+                href={PROFILE_ROUTE}
+                passHref
+                style={{ textDecoration: 'none' }}
+              >
+                <ModalButtonWithIcon>
+                  <User size={24} />
+                  Meu perfil
+                </ModalButtonWithIcon>
+              </Link>
+              <ModalButtonWithIcon onClick={handleLogout}>
+                <SignOut size={24} />
+                Desconectar
+              </ModalButtonWithIcon>
+            </>
           )}
           <CloseButton>
             <X size={24} />

@@ -9,3 +9,5 @@ export const MY_TICKETS_ROUTE = '/my-tickets';
 export const EVENTS_ROUTE = '/events';
 
 export const QR_CODE_ROUTE = '/qr-code';
+
+export const PROFILE_ROUTE = '/profile';

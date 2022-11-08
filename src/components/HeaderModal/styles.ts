@@ -67,7 +67,7 @@ export const ModalLink = styled(Link, {
   },
 });
 
-export const ModalLogoutButton = styled('button', {
+export const ModalButtonWithIcon = styled('button', {
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',

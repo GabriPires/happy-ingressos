@@ -1,10 +1,11 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import Link from 'next/link';
-import { List, SignOut } from 'phosphor-react';
+import { List, SignOut, User } from 'phosphor-react';
 import {
   EVENTS_ROUTE,
   LOGIN_ROUTE,
   MY_TICKETS_ROUTE,
+  PROFILE_ROUTE,
   PROMOTER_SIGNUP_ROUTE,
   SIGNUP_ROUTE,
 } from '../../constants/routes';
@@ -45,9 +46,20 @@ export const Header = () => {
               Crie seu evento
             </LinkButton>
             {isAuthenticated && (
-              <IconButton onClick={handleLogout}>
-                <SignOut size={24} />
-              </IconButton>
+              <>
+                <Link
+                  href={PROFILE_ROUTE}
+                  passHref
+                  style={{ textDecoration: 'none' }}
+                >
+                  <IconButton onClick={handleLogout} title={'Meu perfil'}>
+                    <User size={24} />
+                  </IconButton>
+                </Link>
+                <IconButton onClick={handleLogout} title={'Desconectar'}>
+                  <SignOut size={24} />
+                </IconButton>
+              </>
             )}
           </DesktopLinkContainer>
           <Dialog.Root>

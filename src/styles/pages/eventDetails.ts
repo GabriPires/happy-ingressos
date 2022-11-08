@@ -23,7 +23,6 @@ export const EventHeader = styled('main', {
   img: {
     objectFit: 'cover',
     width: '100%',
-    borderRadius: '6px',
   },
 
   '@lg': {
@@ -32,6 +31,10 @@ export const EventHeader = styled('main', {
     gridColumnGap: '2rem',
 
     marginTop: 40,
+
+    img: {
+      borderRadius: '6px',
+    },
   },
 });
 

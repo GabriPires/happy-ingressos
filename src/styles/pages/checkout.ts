@@ -80,7 +80,7 @@ export const CheckoutContainer = styled('div', {
   flexDirection: 'column',
 
   width: '100%',
-  marginTop: 20,
+  marginTop: 16,
   paddingInline: '8px',
 
   paddingBottom: '1rem',
@@ -96,7 +96,7 @@ export const TicketInput = styled('div', {
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  marginTop: 20,
+  marginTop: 16,
 
   background: '$gray800',
   padding: '1rem',
@@ -167,7 +167,7 @@ export const CheckoutSummary = styled('div', {
   padding: '1rem',
   borderRadius: '6px',
 
-  marginTop: 20,
+  marginTop: 16,
 
   h3: {
     fontSize: '$md',
@@ -183,7 +183,7 @@ export const CheckoutSummary = styled('div', {
 });
 
 export const FinishButton = styled('button', {
-  marginTop: 20,
+  marginTop: 16,
 
   display: 'flex',
   alignItems: 'center',

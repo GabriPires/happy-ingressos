@@ -24,6 +24,7 @@ export const HeaderModal = () => {
       <Overlay />
       <Content>
         <div>
+          <ModalLink href={'/'}>Página inicial</ModalLink>
           {isAuthenticated ? (
             <ModalLink href={MY_TICKETS_ROUTE}>Seus ingressos</ModalLink>
           ) : (

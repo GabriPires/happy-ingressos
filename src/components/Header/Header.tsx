@@ -9,13 +9,13 @@ import {
 } from '../../constants/routes';
 import { useAuth } from '../../contexts/AuthContext';
 import { HeaderModal } from '../HeaderModal/HeaderModal';
+import { IconButton } from '../IconButton/IconButton';
 import { LinkButton } from '../LinkButton/LinkButton';
 import {
   DesktopLinkContainer,
   HeaderContainer,
   HeaderContent,
   HeaderLink,
-  IconButton,
   ModalTriggerButton,
 } from './styles';
 

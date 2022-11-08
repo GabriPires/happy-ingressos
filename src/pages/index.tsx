@@ -15,6 +15,7 @@ import { EventCard } from '../components/EventCard/EventCard';
 import { CustomHeading } from '../components/CustomHeading/CustomHeading';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
+import { EVENTS_ROUTE } from '../constants/routes';
 
 export default function Home() {
   const [trendingSliderRef] = useKeenSlider({
@@ -77,17 +78,17 @@ export default function Home() {
             <div className="keen-slider" ref={trendingSliderRef}>
               <EventCard
                 variant="large"
-                href={'/events/show'}
+                href={`${EVENTS_ROUTE}/show`}
                 className={'keen-slider__slide'}
               />
               <EventCard
                 variant="large"
-                href={'/events/show'}
+                href={`${EVENTS_ROUTE}/show`}
                 className={'keen-slider__slide'}
               />
               <EventCard
                 variant="large"
-                href={'/events/show'}
+                href={`${EVENTS_ROUTE}/show`}
                 className={'keen-slider__slide'}
               />
             </div>
@@ -96,9 +97,9 @@ export default function Home() {
           <Sector>
             <CustomHeading>Pra curtir com os amigos</CustomHeading>
             <EventsContainer>
-              <EventCard variant="small" href={'/events/show'} />
-              <EventCard variant="small" href={'/events/show'} />
-              <EventCard variant="small" href={'/events/show'} />
+              <EventCard variant="small" href={`${EVENTS_ROUTE}/show`} />
+              <EventCard variant="small" href={`${EVENTS_ROUTE}/show`} />
+              <EventCard variant="small" href={`${EVENTS_ROUTE}/show`} />
             </EventsContainer>
           </Sector>
         </Content>

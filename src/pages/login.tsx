@@ -13,6 +13,7 @@ import { FormErrorMessage } from '../components/FormErrorMessage/FormErrorMessag
 import { FormContent } from '../components/FormContent/FormContent';
 import Link from 'next/link';
 import { LOGIN_ROUTE, SIGNUP_ROUTE } from '../constants/routes';
+import { setCookie } from 'nookies';
 
 const loginFormSchema = zod.object({
   email: zod
@@ -39,6 +40,15 @@ export default function Login() {
 
   const handleLogin: SubmitHandler<LoginFormData> = (data) => {
     console.log(data);
+    setCookie(
+      undefined,
+      '@happy-ingressos:token',
+      'auth-token-mucho-crazy-here',
+      {
+        maxAge: 60 * 60 * 24 * 30, // 30 days
+        path: '/',
+      },
+    );
   };
 
   return (

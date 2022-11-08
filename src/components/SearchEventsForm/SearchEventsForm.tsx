@@ -8,12 +8,16 @@ export type SearchEventsFormData = {
 
 export interface SearchEventsFormProps {
   onSubmit?: (data: SearchEventsFormData) => void;
+  value?: string;
 }
 
-export const SearchEventsForm = ({ onSubmit }: SearchEventsFormProps) => {
+export const SearchEventsForm = ({
+  onSubmit,
+  value = '',
+}: SearchEventsFormProps) => {
   const { register, handleSubmit } = useForm<SearchEventsFormData>({
     defaultValues: {
-      search: '',
+      search: value,
     },
   });
 

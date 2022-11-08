@@ -2,6 +2,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import Link from 'next/link';
 import { List, SignOut } from 'phosphor-react';
 import {
+  EVENTS_ROUTE,
   LOGIN_ROUTE,
   MY_TICKETS_ROUTE,
   PROMOTER_SIGNUP_ROUTE,
@@ -31,6 +32,7 @@ export const Header = () => {
           </Link>
 
           <DesktopLinkContainer>
+            <HeaderLink href={EVENTS_ROUTE}>Eventos</HeaderLink>
             {isAuthenticated ? (
               <HeaderLink href={MY_TICKETS_ROUTE}>Meus ingressos</HeaderLink>
             ) : (

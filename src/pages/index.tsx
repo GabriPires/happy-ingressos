@@ -16,8 +16,11 @@ import { CustomHeading } from '../components/CustomHeading/CustomHeading';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import { EVENTS_ROUTE } from '../constants/routes';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const { push } = useRouter();
+
   const [trendingSliderRef] = useKeenSlider({
     loop: true,
     breakpoints: {
@@ -36,29 +39,8 @@ export default function Home() {
     },
   });
 
-  const [defaultSliderRef] = useKeenSlider({
-    loop: true,
-    slides: {
-      spacing: 16,
-    },
-    breakpoints: {
-      '(min-width: 768px)': {
-        slides: {
-          perView: 1.5,
-          spacing: 32,
-        },
-      },
-      '(min-width: 1024px)': {
-        slides: {
-          perView: 3,
-          spacing: 16,
-        },
-      },
-    },
-  });
-
   const handleSearchEvents = (data: SearchEventsFormData) => {
-    console.log(data);
+    push(`${EVENTS_ROUTE}?event=${data.search}`);
   };
 
   return (

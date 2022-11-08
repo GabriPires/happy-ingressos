@@ -5,6 +5,7 @@ import {
   SIGNUP_ROUTE,
   PROMOTER_SIGNUP_ROUTE,
   MY_TICKETS_ROUTE,
+  EVENTS_ROUTE,
 } from '../../constants/routes';
 import { useAuth } from '../../contexts/AuthContext';
 import { LinkButton } from '../LinkButton/LinkButton';
@@ -26,7 +27,10 @@ export const HeaderModal = () => {
         <div>
           <ModalLink href={'/'}>Página inicial</ModalLink>
           {isAuthenticated ? (
-            <ModalLink href={MY_TICKETS_ROUTE}>Meus ingressos</ModalLink>
+            <>
+              <ModalLink href={EVENTS_ROUTE}>Eventos</ModalLink>
+              <ModalLink href={MY_TICKETS_ROUTE}>Meus ingressos</ModalLink>
+            </>
           ) : (
             <>
               <ModalLink href={LOGIN_ROUTE}>Entrar</ModalLink>

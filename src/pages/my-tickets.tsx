@@ -5,7 +5,7 @@ import { Calendar, Clock, MapPin, QrCode } from 'phosphor-react';
 import { CustomHeading } from '../components/CustomHeading/CustomHeading';
 import { Header } from '../components/Header/Header';
 import { IconButton } from '../components/IconButton/IconButton';
-import { EVENTS_ROUTE } from '../constants/routes';
+import { EVENTS_ROUTE, QR_CODE_ROUTE } from '../constants/routes';
 import { PAGE_HEADER_SUFFIX } from '../constants/title';
 import {
   Container,
@@ -56,9 +56,11 @@ export default function MyTickets() {
                 <Clock size={20} /> 23:00
               </span>
             </TicketDetails>
-            <IconButton title="Visualizar QR Code do ingresso">
-              <QrCode />
-            </IconButton>
+            <Link href={`${QR_CODE_ROUTE}/show`} passHref>
+              <IconButton title="Visualizar QR Code do ingresso">
+                <QrCode />
+              </IconButton>
+            </Link>
           </Ticket>
 
           <Ticket>
@@ -91,9 +93,11 @@ export default function MyTickets() {
                 <Clock size={20} /> 23:00
               </span>
             </TicketDetails>
-            <IconButton title="Visualizar QR Code do ingresso">
-              <QrCode />
-            </IconButton>
+            <Link href={`${QR_CODE_ROUTE}/show`} passHref>
+              <IconButton title="Visualizar QR Code do ingresso">
+                <QrCode />
+              </IconButton>
+            </Link>
           </Ticket>
 
           <Ticket>
@@ -126,9 +130,11 @@ export default function MyTickets() {
                 <Clock size={20} /> 23:00
               </span>
             </TicketDetails>
-            <IconButton title="Visualizar QR Code do ingresso">
-              <QrCode />
-            </IconButton>
+            <Link href={`${QR_CODE_ROUTE}/show`} passHref>
+              <IconButton title="Visualizar QR Code do ingresso">
+                <QrCode />
+              </IconButton>
+            </Link>
           </Ticket>
         </TicketsContainer>
 

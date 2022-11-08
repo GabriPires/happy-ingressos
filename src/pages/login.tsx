@@ -14,6 +14,7 @@ import { FormContent } from '../components/FormContent/FormContent';
 import Link from 'next/link';
 import { LOGIN_ROUTE, SIGNUP_ROUTE } from '../constants/routes';
 import { useAuth } from '../contexts/AuthContext';
+import { useRouter } from 'next/router';
 
 const loginFormSchema = zod.object({
   email: zod
@@ -27,6 +28,7 @@ type LoginFormData = zod.infer<typeof loginFormSchema>;
 
 export default function Login() {
   const { handleLogin } = useAuth();
+  const { push } = useRouter();
 
   const {
     register,
@@ -42,7 +44,8 @@ export default function Login() {
 
   const onLogin: SubmitHandler<LoginFormData> = (data) => {
     console.log(data);
-    handleLogin;
+    handleLogin();
+    push('/');
   };
 
   return (

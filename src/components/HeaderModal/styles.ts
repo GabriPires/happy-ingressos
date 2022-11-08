@@ -66,3 +66,14 @@ export const ModalLink = styled(Link, {
     textDecoration: 'underline',
   },
 });
+
+export const ModalLogoutButton = styled('button', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.5rem',
+
+  background: 'transparent',
+  border: 'none',
+  color: '$white',
+  fontSize: '$md',
+});

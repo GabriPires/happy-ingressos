@@ -1,11 +1,13 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import Link from 'next/link';
-import { List } from 'phosphor-react';
+import { List, SignOut } from 'phosphor-react';
 import {
   LOGIN_ROUTE,
+  MY_TICKETS_ROUTE,
   PROMOTER_SIGNUP_ROUTE,
   SIGNUP_ROUTE,
 } from '../../constants/routes';
+import { useAuth } from '../../contexts/AuthContext';
 import { HeaderModal } from '../HeaderModal/HeaderModal';
 import { LinkButton } from '../LinkButton/LinkButton';
 import {
@@ -13,10 +15,13 @@ import {
   HeaderContainer,
   HeaderContent,
   HeaderLink,
+  IconButton,
   ModalTriggerButton,
 } from './styles';
 
 export const Header = () => {
+  const { isAuthenticated, handleLogout } = useAuth();
+
   return (
     <>
       <HeaderContainer>
@@ -26,11 +31,22 @@ export const Header = () => {
           </Link>
 
           <DesktopLinkContainer>
-            <HeaderLink href={LOGIN_ROUTE}>Entrar</HeaderLink>
-            <HeaderLink href={SIGNUP_ROUTE}>Cadastre-se</HeaderLink>
-            <LinkButton href={PROMOTER_SIGNUP_ROUTE}>
+            {isAuthenticated ? (
+              <HeaderLink href={MY_TICKETS_ROUTE}>Seus ingressos</HeaderLink>
+            ) : (
+              <>
+                <HeaderLink href={LOGIN_ROUTE}>Entrar</HeaderLink>
+                <HeaderLink href={SIGNUP_ROUTE}>Cadastre-se</HeaderLink>
+              </>
+            )}
+            <LinkButton href={PROMOTER_SIGNUP_ROUTE} title={'Sair'}>
               Crie seu evento
             </LinkButton>
+            {isAuthenticated && (
+              <IconButton onClick={handleLogout}>
+                <SignOut size={24} />
+              </IconButton>
+            )}
           </DesktopLinkContainer>
           <Dialog.Root>
             <Dialog.DialogTrigger asChild>

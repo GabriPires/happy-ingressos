@@ -32,7 +32,7 @@ export const Header = () => {
 
           <DesktopLinkContainer>
             {isAuthenticated ? (
-              <HeaderLink href={MY_TICKETS_ROUTE}>Seus ingressos</HeaderLink>
+              <HeaderLink href={MY_TICKETS_ROUTE}>Meus ingressos</HeaderLink>
             ) : (
               <>
                 <HeaderLink href={LOGIN_ROUTE}>Entrar</HeaderLink>

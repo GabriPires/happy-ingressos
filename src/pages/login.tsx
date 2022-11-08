@@ -13,7 +13,7 @@ import { FormErrorMessage } from '../components/FormErrorMessage/FormErrorMessag
 import { FormContent } from '../components/FormContent/FormContent';
 import Link from 'next/link';
 import { LOGIN_ROUTE, SIGNUP_ROUTE } from '../constants/routes';
-import { setCookie } from 'nookies';
+import { useAuth } from '../contexts/AuthContext';
 
 const loginFormSchema = zod.object({
   email: zod
@@ -26,6 +26,8 @@ const loginFormSchema = zod.object({
 type LoginFormData = zod.infer<typeof loginFormSchema>;
 
 export default function Login() {
+  const { handleLogin } = useAuth();
+
   const {
     register,
     handleSubmit,
@@ -38,17 +40,9 @@ export default function Login() {
     },
   });
 
-  const handleLogin: SubmitHandler<LoginFormData> = (data) => {
+  const onLogin: SubmitHandler<LoginFormData> = (data) => {
     console.log(data);
-    setCookie(
-      undefined,
-      '@happy-ingressos:token',
-      'auth-token-mucho-crazy-here',
-      {
-        maxAge: 60 * 60 * 24 * 30, // 30 days
-        path: '/',
-      },
-    );
+    handleLogin;
   };
 
   return (
@@ -58,7 +52,7 @@ export default function Login() {
       </Head>
 
       <Container>
-        <FormContainer onSubmit={handleSubmit(handleLogin)}>
+        <FormContainer onSubmit={handleSubmit(onLogin)}>
           <h1>Faça seu acesso</h1>
           <FormContent>
             <TextInput

@@ -1,9 +1,9 @@
-import { parseCookies, destroyCookie } from 'nookies';
+import { parseCookies, destroyCookie, setCookie } from 'nookies';
 import { createContext, useContext, useState } from 'react';
 
 interface AuthContextData {
   isAuthenticated: boolean;
-  handleSetIsAuthenticated: (isAuthenticated: boolean) => void;
+  handleLogin: () => void;
   handleLogout: () => void;
 }
 
@@ -30,7 +30,16 @@ export const AuthProvider = ({ children }: AuthProvider) => {
     return false;
   });
 
-  const handleSetIsAuthenticated = (isAuthenticated: boolean) => {
+  const handleLogin = () => {
+    setCookie(
+      undefined,
+      '@happy-ingressos:token',
+      'auth-token-mucho-crazy-here',
+      {
+        maxAge: 60 * 60 * 24 * 30, // 30 days
+        path: '/',
+      },
+    );
     setIsAuthenticated(isAuthenticated);
   };
 
@@ -41,7 +50,11 @@ export const AuthProvider = ({ children }: AuthProvider) => {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, handleSetIsAuthenticated, handleLogout }}
+      value={{
+        isAuthenticated,
+        handleLogin,
+        handleLogout,
+      }}
     >
       {children}
     </AuthContext.Provider>

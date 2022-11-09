@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     formats: ['image/webp'],
-    domains: ['i.picsum.photos', 'picsum.photos'],
+    domains: ['i.picsum.photos', 'picsum.photos', 'i.pravatar.cc'],
   },
 };
 

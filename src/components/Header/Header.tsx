@@ -52,7 +52,7 @@ export const Header = () => {
                   passHref
                   style={{ textDecoration: 'none' }}
                 >
-                  <IconButton onClick={handleLogout} title={'Meu perfil'}>
+                  <IconButton title={'Meu perfil'}>
                     <User size={24} />
                   </IconButton>
                 </Link>
